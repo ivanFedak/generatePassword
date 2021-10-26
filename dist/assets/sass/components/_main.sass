@@ -1,0 +1,77 @@
+.main
+    @include adaptiv-value('padding-top', 120, 50, 1)
+    @include adaptiv-value('padding-bottom', 120, 50, 1)
+    &__container
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+    &__body 
+    &__title
+        font-weight: 700
+        @include adaptiv-value('font-size', 44, 22, 1)
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 22, 10, 1)
+    &__form
+        display: flex
+        flex-direction: column
+        align-items: stretch
+    &__input
+        box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px
+        border: none
+        border-radius: 5px
+        @include adaptiv-value('padding', 20, 7, 1)
+        width: 100%
+        transition: all 0.3s ease 0s
+        font-weight: 600
+        color: #000
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 15, 10, 1)
+        &:focus
+            border-radius: 8px
+    &__btns
+        display: flex
+        &:not(:last-child)
+            margin-bottom: 20px
+    &__btn
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        text-align: center
+        min-width: 120px
+        @include adaptiv-value('padding', 12, 5, 1)
+        background: #333333
+        border-radius: 4px
+        transition: all 0.3s ease 0s
+        &:not(:last-child)
+            margin-right: 15px
+
+
+        color: #fff
+        font-weight: 500
+        @media (any-hover: hover )
+            &:hover
+                box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px
+                border-radius: 7px
+                background: #69caed
+        &_copy
+            @media (any-hover: hover )
+               &:hover
+                  background: #2fd26b
+    
+    &__checkbox
+        display: flex
+        padding: 15px
+        background: #333333
+        border-radius: 4px
+    &__label
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        &:not(:last-child)
+            margin-right: 25px
+    &__check
+        margin-left: 10px
+        min-width: 30px
+        min-height: 30px
