@@ -2057,11 +2057,16 @@ __webpack_require__.r(__webpack_exports__);
 
 var generator = function generator() {
   var btnG = document.querySelector('.main__btn'),
-      btnC = document.querySelector('.main__btn_copy'),
-      input = document.querySelector('.main__input'),
-      checkN = document.querySelector('.main__check_num'),
-      checkL = document.querySelector('.main__check_let'),
-      checkS = document.querySelector('.main__check_sym');
+      //Btn Generate
+  btnC = document.querySelector('.main__btn_copy'),
+      //Btn Copy
+  input = document.querySelector('.main__input'),
+      //Input where password generating
+  checkN = document.querySelector('.main__check_num'),
+      //numers
+  checkL = document.querySelector('.main__check_let'),
+      //letters
+  checkS = document.querySelector('.main__check_sym'); //symbols
 
   function generate(e) {
     var nums = '0123456789';

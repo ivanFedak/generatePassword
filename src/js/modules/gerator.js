@@ -1,11 +1,11 @@
 const generator = ()=>{
     
-    const btnG = document.querySelector('.main__btn'),
-          btnC = document.querySelector('.main__btn_copy'),
-          input = document.querySelector('.main__input'),
-          checkN = document.querySelector('.main__check_num'),
-          checkL = document.querySelector('.main__check_let'),
-          checkS = document.querySelector('.main__check_sym');
+    const btnG = document.querySelector('.main__btn'),//Btn Generate
+          btnC = document.querySelector('.main__btn_copy'),//Btn Copy
+          input = document.querySelector('.main__input'), //Input where password generating
+          checkN = document.querySelector('.main__check_num'), //numers
+          checkL = document.querySelector('.main__check_let'), //letters
+          checkS = document.querySelector('.main__check_sym'); //symbols
 
     
 
