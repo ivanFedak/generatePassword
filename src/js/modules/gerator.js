@@ -10,6 +10,7 @@ const generator = ()=>{
     
 
     function generate(e) {
+
         let nums = '0123456789';
         let letters = 'abcdefghijklmnopqrstuvwxyz';
         let specials = '!@#$%^&*()_+?><:{}[]'
@@ -18,25 +19,67 @@ const generator = ()=>{
         let lettersA = letters.split(""); //Array with letters
         let specialsA = specials.split(""); //Array with special symbols
 
+
+        let newArr = []
+
         if(checkN.checked === true){
-            console.log(1)
+            newArr.push(nums)
         }
+        if(checkL.checked === true){
+            newArr.push(letters)
+        }
+        if(checkS.checked === true){
+            newArr.push(specials)
+        }
+
+        const res = newArr.reduce((sum, current)=>`${sum}${current}`);
+
+
+    
+        let passwordLenght = 16;
+        let password = '';
+
+        for (let i = 0; i < passwordLenght; i++) {
+            let randomNumber = Math.floor(Math.random() * res.length);
+            password += res[randomNumber]
+        }
+
+        input.value = password;
+    }
+
+
+
+    
+    // function generate(e) {
+    //     let nums = '0123456789';
+    //     let letters = 'abcdefghijklmnopqrstuvwxyz';
+    //     let specials = '!@#$%^&*()_+?><:{}[]'
+        
+    //     let numsA = nums.split("");//Array with numers
+    //     let lettersA = letters.split(""); //Array with letters
+    //     let specialsA = specials.split(""); //Array with special symbols
+
+    //     if(checkN.checked === true){
+    //         console.log(1)
+    //     }
 
 
 
         
 
-        let finishArr = [...numsA,...lettersA, ...specialsA];
-        let passwordLenght = 16;
-        let password = '';
+    //     let finishArr = [...numsA,...lettersA, ...specialsA];
+    //     let passwordLenght = 16;
+    //     let password = '';
 
-        for (let i = 0; i < passwordLenght; i++) {
-            let randomNumber = Math.floor(Math.random() * finishArr.length);
-            password += finishArr[randomNumber]
-        }
+    //     for (let i = 0; i < passwordLenght; i++) {
+    //         let randomNumber = Math.floor(Math.random() * finishArr.length);
+    //         password += finishArr[randomNumber]
+    //     }
 
-        input.value = password;
-    }
+    //     input.value = password;
+    // }
+
+
 
     // function generate(e) {
     //     let chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()_+?><:{}[]";
