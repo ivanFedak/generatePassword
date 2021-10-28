@@ -31,8 +31,11 @@
             border-radius: 8px
     &__btns
         display: flex
+        flex-wrap: wrap
         &:not(:last-child)
             margin-bottom: 20px
+        @media (max-width: $md3 + px) //Less 768
+           flex-direction: column
     &__btn
         display: flex
         flex-direction: column
@@ -55,11 +58,31 @@
                 box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px
                 border-radius: 7px
                 background: #69caed
+            &:active
+                background: #69caed
+        @media (max-width: $md3 + px) //Less 768
+            &:not(:last-child)    
+                margin: 0 0 10px 0
         &_copy
             @media (any-hover: hover )
                &:hover
                   background: #2fd26b
-    
+            &:active
+                background: #2fd26b
+                
+    &__error
+        display: none
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        text-align: center
+        min-width: 120px
+        @include adaptiv-value('padding', 12, 5, 1)
+        background: #d50000
+        border-radius: 4px
+        transition: all 0.3s ease 0s
+        &:not(:last-child)
+            margin-right: 15px
     &__checkbox
         display: grid
         grid-template-columns: repeat(auto-fit, minmax(175px,1fr ))
@@ -90,3 +113,7 @@
 ._hold
     pointer-events: none
     opacity: 0.4
+
+.main__error_active
+    display: flex
+    opacity: 1

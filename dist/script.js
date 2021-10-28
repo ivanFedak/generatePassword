@@ -1850,6 +1850,8 @@ var generator = function generator() {
       //Wrapper for btns
   btnGen = document.querySelector('.main__btn'),
       //Btn Generate
+  errorBlock = document.querySelector('.main__error'),
+      //Error block
   btnC = document.querySelector('.main__btn_copy'),
       //Btn Copy
   input = document.querySelector('.main__input'),
@@ -1899,8 +1901,9 @@ var generator = function generator() {
       }
 
       input.value = password;
+      errorBlock.classList.remove('main__error_active');
     } catch (e) {
-      console.log('Error');
+      errorBlock.classList.add('main__error_active');
     }
   }
 
@@ -1917,8 +1920,8 @@ var generator = function generator() {
       clearInterval(interval); //Remove interval
 
       btnsBlock.classList.remove('_hold');
-      block.classList.add('_hold');
-    }, 10000);
+      block.classList.remove('_hold');
+    }, 1500);
   });
   btnC.addEventListener('click', copy);
   range.addEventListener('input', function (e) {

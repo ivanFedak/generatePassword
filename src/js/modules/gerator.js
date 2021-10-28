@@ -3,6 +3,7 @@ const generator = ()=>{
     const block = document.querySelector('.main__checkbox'), //wrapper for check
           btnsBlock = document.querySelector('.main__btns'),//Wrapper for btns
           btnGen = document.querySelector('.main__btn'),//Btn Generate
+          errorBlock = document.querySelector('.main__error'),//Error block
           btnC = document.querySelector('.main__btn_copy'),//Btn Copy
           input = document.querySelector('.main__input'), //Input where password generating
           checkN = document.querySelector('.main__check_num'), //numers
@@ -12,7 +13,7 @@ const generator = ()=>{
           range = document.querySelector('.main__range'), //range (lenght)
           result = document.querySelector('.main__number');
 
-
+          
 
     function generate(e) {
 
@@ -54,10 +55,11 @@ const generator = ()=>{
 
             input.value = password;
 
-
+            errorBlock.classList.remove('main__error_active');
         }catch(e){
-            console.log('Error')
+            errorBlock.classList.add('main__error_active');
         }
+       
 
 
     }
@@ -81,8 +83,8 @@ const generator = ()=>{
             clearInterval(interval)//Remove interval
 
             btnsBlock.classList.remove('_hold');
-            block.classList.add('_hold')
-        }, 10000);
+            block.classList.remove('_hold')
+        }, 1500);
 
 
     })
@@ -90,7 +92,7 @@ const generator = ()=>{
     btnC.addEventListener('click',copy);
 
 
-    
+
     range.addEventListener('input',function(e){
         result.textContent = range.value;
     })
