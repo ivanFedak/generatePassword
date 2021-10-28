@@ -61,17 +61,32 @@
                   background: #2fd26b
     
     &__checkbox
-        display: flex
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(175px,1fr ))
+        grid-gap: 10px
+        column-gap: 20px
         padding: 15px
         background: #333333
         border-radius: 4px
+        @media (max-width: $md4 + px)//Less 479
+           flex-direction: column
+
     &__label
         display: flex
-        flex-wrap: wrap
         align-items: center
-        &:not(:last-child)
-            margin-right: 25px
+        justify-content: space-between
+        @media (max-width: $md3 + px)//Less 768
+           &:not(:last-child)
+               margin: 0 0 10px 0
+    &__val
+        flex-direction: row-reverse
+    &__number
+    &__range
     &__check
         margin-left: 10px
         min-width: 30px
         min-height: 30px
+    
+._hold
+    pointer-events: none
+    opacity: 0.4
